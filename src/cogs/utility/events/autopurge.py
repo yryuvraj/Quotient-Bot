@@ -32,8 +32,9 @@ class AutoPurgeEvents(Cog):
         channel = message.channel
         content = message.content if message.content else "*[Content Unavailable]*"
 
-        if not channel.type == discord.ChannelType.text:
-            return
+        # Remove the check for channel type
+        # if not channel.type == discord.ChannelType.text:
+        #     return
 
         await Snipe.update_or_create(
             channel_id=channel.id,
